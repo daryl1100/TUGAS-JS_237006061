@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Daffa</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">PRD<span>V</span></div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <nav id="navMenu">
+            <ul>
+                <li><a href="#home" onclick="closeMenu()">Home</a></li>
+                <li><a href="#about" onclick="closeMenu()">About</a></li>
+                <li><a href="#skills" onclick="closeMenu()">Skills</a></li>
+                <li><a href="#testimonials" onclick="closeMenu()">Testimonials</a></li>
+                <li><a href="#portfolio" onclick="closeMenu()">Portfolio</a></li>
+                <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-text">
+            <h1>HELLO, I'M <span>DAFFA</span><br>AN WEB DEVELOPER</h1>
+            <p>“Seni Merupakan Manifestasi Pikiran”</p>
+            <a href="#portfolio" class="btn">Let's See!</a>
+        </div>
+        <div class="hero-img">
+            <img src="daffa.png" alt="Daffa Profile">
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <h2>About <span>Me</span></h2>
+        <p>Saya adalah seorang desainer UI yang berfokus...</p>
+    </section>
+    
+    <section id="skills" class="skills">
+        <h2>Skills</h2>
+        <div class="skill">
+            <span>Laravel</span>
+            <div class="bar"><div class="progress" style="width: 80%;"></div></div>
+        </div>
+        <div class="skill">
+            <span>Tailwind</span>
+            <div class="bar"><div class="progress" style="width: 70%;"></div></div>
+        </div>
+        <div class="skill">
+            <span>MySQL</span>
+            <div class="bar"><div class="progress" style="width: 60%;"></div></div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+        <h2>Why Hire <span>Me?</span></h2>
+        <div class="testimonial-container">
+            <div class="testimonial">
+                <img src="person1.jpeg" alt="Alwijo">
+                <h3>Alwijo</h3>
+                <p>“Pelayanan Baik”</p>
+            </div>
+            <div class="testimonial">
+                <img src="person1.jpeg" alt="John">
+                <h3>John</h3>
+                <p>“Pelayanan Baik”</p>
+            </div>
+            <div class="testimonial">
+                <img src="person1.jpeg" alt="Doe">
+                <h3>Doe</h3>
+                <p>“Pelayanan Baik”</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="portfolio">
+        <h2>My <span>Portfolio</span></h2>
+        <div class="portfolio-item">
+            <img src="project1.png" alt="Project">
+            <h3>Project Name by PRDV</h3>
+        </div>
+    </section>
+    
+    <section id="contact" class="contact">
+        <h2>Contact <span>Me</span></h2>
+        <form>
+            <input type="email" placeholder="Email" required>
+            <textarea placeholder="Message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>Copyright &copy; 2025 Daffa Pradiva. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navMenu = document.getElementById('navMenu');
+            const hamburger = document.querySelector('.hamburger');
+    
+    navMenu.classList.toggle('active');
+    hamburger.classList.toggle('active');
+    
+    // Toggle scroll body
+    document.body.classList.toggle('no-scroll');
+    }   
+
+        function closeMenu() {
+            const navMenu = document.getElementById('navMenu');
+            const hamburger = document.querySelector('.hamburger');
+    
+            navMenu.classList.remove('active');
+            hamburger.classList.remove('active');
+            document.body.classList.remove('no-scroll');
+    }
+
+// Close ketika klik di luar menu
+    document.addEventListener('click', function(event) {
+        const navMenu = document.getElementById('navMenu');
+        const hamburger = document.querySelector('.hamburger');
+    
+    if (!navMenu.contains(event.target) && 
+        !hamburger.contains(event.target) && 
+        !event.target.classList.contains('bar')) {
+        closeMenu();
+    }
+});
+    </script>
+
+</body>
+</html>
